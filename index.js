@@ -1,5 +1,6 @@
 'use strict';
 var path = require('path');
+var tempDbName = 'temp_dev_db';
 
 /*script currently uses connects as the postgres user from localhost, so no
     credentials are necessary
@@ -19,7 +20,7 @@ var knex = require('knex')({
 });
 
 var copySchema = require(path.join(__dirname, 'lib/copy-schema.js'));
-copySchema();
+copySchema(tempDbName);
 
 knex('cas_sites').select()
     .then(function(data) {
