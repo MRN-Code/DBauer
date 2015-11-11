@@ -1,19 +1,13 @@
 'use strict';
+var config = require('config');
 var path = require('path');
-var tempDbName = 'temp_dev_db';
+var tempDbName = config.get('tempDbName');
 
-/*script currently uses connects as the postgres user from localhost, so no
-    credentials are necessary
 var getConnInfo = require(path.join(__dirname, 'lib/get-connection-info.js'));
 var connectionInfo = getConnInfo();
 connectionInfo.database = connectionInfo.db;
 connectionInfo.user = connectionInfo.username;
-*/
-var connectionInfo = {
-    host: 'localhost',
-    user: 'postgres',
-    database: 'coins'
-};
+
 var knex = require('knex')({
     client: 'pg',
     connection: connectionInfo

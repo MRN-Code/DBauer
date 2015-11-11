@@ -1,6 +1,8 @@
 'use strict';
 module.exports = {
     dbConfigPath: '/coins/config/dbadmin.json',
+    srcDbName: 'coins',
+    tempDbName: 'temp_dev_db',
     environment: 'development'
 };
 /*
