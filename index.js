@@ -10,7 +10,8 @@ connectionInfo.user = connectionInfo.username;
 */
 var connectionInfo = {
     host: 'localhost',
-    user: 'postgres'
+    user: 'postgres',
+    database: 'coins'
 };
 var knex = require('knex')({
     client: 'pg',
