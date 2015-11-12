@@ -8,10 +8,11 @@ var getConnInfo = require(path.join(__dirname, 'lib/get-connection-info.js'));
 var connectionInfo = getConnInfo();
 
 dbUtils.init(connectionInfo);
-dbUtils.copySchema(tempDbName);
+//dbUtils.copySchema(tempDbName);
 var copyData = require(path.join(__dirname, 'lib/copy-seed-data.js'));
 copyData(connectionInfo)
     .then(function() {
-        dbUtils.dumpDb(tempDbName, config.get('destPath'));
+        //dbUtils.dumpDb(tempDbName, config.get('destPath'));
         //dbUtils.dropTempDb(tempDbName);
+        process.exit(0);
     });

@@ -11,7 +11,6 @@ module.exports = {
         seedSiteId: '7',
         allRows: [
             'cas_roles',
-            'cas_sites_config',
             'mrs_modalities',
             'mrs_scan_data_types'
         ],
@@ -20,8 +19,8 @@ module.exports = {
             'mrs_instruments_studies'
         ],
         rowsBySiteId: [
-            'cas_sites',
-            'cas_sites_config'
+            'cas_sites_config',
+            'cas_sites'
         ],
         rowsFromMultiTable: [
             {
@@ -51,6 +50,16 @@ module.exports = {
                     }
                 ],
                 where: 'study'
+            }
+        ],
+        rawRows: [
+            {
+                tableName: 'cas_sites',
+                rows: [
+                    /* jscs:disable */
+                    {site_id: '8', label: 'foo', description: 'foo'} //jshint ignore:line
+                    /* jscs:enable */
+                ]
             }
         ]
     }
