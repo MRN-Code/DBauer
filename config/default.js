@@ -142,7 +142,7 @@ module.exports = {
                 where: 'study'
             },
             {
-                tableName: 'mrs_instrument_table_columns',
+                tableName: 'mrs_instrument_table_cols',
                 joins: [
                     {
                         tableName: 'mrs_instrument_tables',
