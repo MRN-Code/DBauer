@@ -7,7 +7,7 @@ module.exports = {
     schemaSearchPath: 'mrsdba,casdba,dxdba,dtdba',
     destPath: require('path').join(__dirname, '../dist/coins.pgdump'),
     seedDataConfig: {
-        seedStudyId: 10,
+        seedStudyId: 2319,
         seedSiteId: '7',
         allRows: [
             'cas_roles',
