@@ -7,8 +7,8 @@ module.exports = {
     schemaSearchPath: 'mrsdba,casdba,dxdba,dtdba',
     destPath: require('path').join(__dirname, '../dist/coins.pgdump'),
     seedDataConfig: {
-        seedStudyId: 2319,
-        seedSiteId: '7',
+        seedStudyId: 8320,
+        seedSiteId: '99',
         allRows: [
             'cas_roles',
             'mrs_modalities',
@@ -28,7 +28,7 @@ module.exports = {
             'mrs_racial_categories',
             'mrs_source_type',
             'mrs_subject_tags',
-            'mrs_series_definitions',
+            'mrs_series_definitions'
         ],
         rowsByStudyId: [
             'mrs_studies',
