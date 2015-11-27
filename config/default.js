@@ -48,7 +48,8 @@ module.exports = {
         rowsBySiteId: [
             'cas_sites_config',
             'cas_sites',
-            'mrs_scanners'
+            'mrs_scanners',
+            'cas_users'
         ],
         rowsFromMultiTable: [
             {
@@ -312,11 +313,25 @@ module.exports = {
                 where: ['cas_users.label', 'mocha test']
             },
             {
+                tableName: 'cas_app_user_role_privs',
+                joins:[
+                    {tableName:'cas_users', columnName: 'username'}
+                ],
+                where: 'site'
+            },
+            {
                 tableName: 'cas_study_user_role_privs',
                 joins:[
                     {tableName:'cas_users', columnName: 'username'}
                 ],
                 where: ['cas_users.label', 'mocha test']
+            },
+            {
+                tableName: 'cas_study_user_role_privs',
+                joins:[
+                    {tableName:'cas_users', columnName: 'username'}
+                ],
+                where: 'site'
             },
             {
                 tableName: 'cas_apps',
