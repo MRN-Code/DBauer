@@ -6,7 +6,7 @@ var seedStudyId = 8320;
 module.exports = {
     dbConfigPath: '/coins/config/dbadmin.json',
     srcDbName: 'coins',
-    tempDbName: 'temp_dev_db',
+    tempDbName: 'dbauer_tmp_db',
     environment: 'development',
     schemaSearchPath: 'mrsdba,casdba,dxdba,dtdba',
     destPath: require('path').join(__dirname, '../dist/coins.pgdump'),
@@ -459,16 +459,16 @@ module.exports = {
                 rows: [
                     /* jscs:disable */
                     {
-                        username: 'qApQHNJb3dpswjH9utr1Fw==',
+                        username: 'qApQHNJb3dpswjH9utr1Fw==', //testsuper
                         label: 'Test Superuser',
                         active_flag: 'Y', //jshint ignore:line
                         acct_exp_date: '2200-01-11 00:00:00',//jshint ignore:line
                         password_exp_date: '2200-01-11 00:00:00',//jshint ignore:line
-                        site_id: '7',//jshint ignore:line
+                        site_id: '99',//jshint ignore:line
                         is_site_admin: 'N',//jshint ignore:line
-                        email: 'ni@mrn.org',
+                        email: 'nidev@mrn.org',
                         email_unsubscribed: false,//jshint ignore:line
-                        password_hash: '$2y$12$/50tY05bs/K47ZKkcTWrxOGFdwz5SokjGx/e9kdbBInCXJO/MpnH.'//jshint ignore:line
+                        password_hash: '$2y$12$VMLMAM9vrGHLx0XJ0eHw8uPP/eih62piMAvZqzJ0TTkxJLYlJ39d6'//jshint ignore:line SherbetLemon
                     }
                     /* jscs:enable */
                 ]
@@ -501,3 +501,4 @@ module.exports = {
         ]
     }
 };
+module.exports.
