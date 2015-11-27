@@ -1,4 +1,8 @@
 'use strict';
+
+// Define seed study ID locally so that it can be accessed within the module.exports object
+var seedStudyId = 8320;
+
 module.exports = {
     dbConfigPath: '/coins/config/dbadmin.json',
     srcDbName: 'coins',
@@ -7,7 +11,7 @@ module.exports = {
     schemaSearchPath: 'mrsdba,casdba,dxdba,dtdba',
     destPath: require('path').join(__dirname, '../dist/coins.pgdump'),
     seedDataConfig: {
-        seedStudyId: 8320,
+        seedStudyId: seedStudyId,
         seedSiteId: '99',
         allRows: [
             'cas_roles',
@@ -28,7 +32,9 @@ module.exports = {
             'mrs_racial_categories',
             'mrs_source_type',
             'mrs_subject_tags',
-            'mrs_series_definitions'
+            'mrs_series_definitions',
+            'mrs_roles',
+            'mrs_study_status'
         ],
         rowsByStudyId: [
             'mrs_studies',
@@ -36,20 +42,21 @@ module.exports = {
             'mrs_assessments',
             'mrs_data_domains',
             'mrs_document_categories',
-            'mrs_person_role_details',
             'mrs_study_intervals',
             'mrs_study_asmt_prot',
             'mrs_study_trackers',
             'mrs_subject_tag_details',
             'mrs_subject_types',
             'mrs_scan_sessions',
-            'mrs_series_labels'
+            'mrs_series_labels',
+            'mrs_sharing_rules'
         ],
         rowsBySiteId: [
             'cas_sites_config',
             'cas_sites',
             'mrs_scanners',
-            'cas_users'
+            'cas_users',
+            'mrs_persons'
         ],
         rowsFromMultiTable: [
             {
@@ -261,6 +268,16 @@ module.exports = {
                 where: 'study'
             },
             {
+                tableName: 'mrs_instrument_section_details',
+                joins: [
+                    {
+                        tableName: 'mrs_instruments_studies',
+                        columnName: 'instrument_id'
+                    }
+                ],
+                where: 'study'
+            },
+            {
                 tableName: 'mrs_instruments',
                 joins: [
                     {
@@ -271,27 +288,31 @@ module.exports = {
                 where: 'study'
             },
             {
+                tableName: 'mrs_person_role_details',
+                joins:[
+                    {
+                        tableName:'mrs_persons',
+                        columnName: 'person_id'
+                    }
+                ],
+                where: 'site'
+            },
+            {
                 tableName: 'mrs_person_alias',
                 joins:[
                     {
                         tableName:'mrs_person_role_details',
                         columnName: 'alias_id'
-                    }
-                ],
-                where: 'study'
-            },
-            {
-                tableName: 'mrs_person_phone_details',
-                joins:[
+                    },
                     {
-                        tableName:'mrs_person_role_details',
+                        tableName:'mrs_persons',
                         columnName: 'person_id'
                     }
                 ],
-                where: 'study'
+                where: 'site'
             },
             {
-                tableName: 'mrs_persons',
+                tableName: 'mrs_person_phone_details',
                 joins:[
                     {
                         tableName:'mrs_person_role_details',
@@ -337,6 +358,36 @@ module.exports = {
                 tableName: 'cas_apps',
                 joins:[],
                 where: ['label', 'NOT LIKE', '%Portal%']
+            },
+            {
+                tableName: 'mrs_sharing_rules_asmts',
+                joins: [
+                    {
+                        tableName: 'mrs_sharing_rules',
+                        columnName: 'sharing_rule_id'
+                    }
+                ],
+                where: 'study'
+            },
+            {
+                tableName: 'mrs_sharing_rules_studies',
+                joins: [
+                    {
+                        tableName: 'mrs_sharing_rules',
+                        columnName: 'sharing_rule_id'
+                    }
+                ],
+                where: ['mrs_sharing_rules.study_id', seedStudyId]
+            },
+            {
+                tableName: 'mrs_sharing_rules_exceptions',
+                joins: [
+                    {
+                        tableName: 'mrs_sharing_rules',
+                        columnName: 'sharing_rule_id'
+                    }
+                ],
+                where: 'study'
             },
             {
                 tableName: 'mrs_subjects',
