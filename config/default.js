@@ -501,4 +501,3 @@ module.exports = {
         ]
     }
 };
-module.exports.
