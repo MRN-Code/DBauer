@@ -1,6 +1,6 @@
 'use strict';
 
-// Define seed study ID locally so that it can be accessed within the module.exports object
+// Define seed study ID locally for access within the module.exports object
 var seedStudyId = 8320;
 
 module.exports = {
@@ -10,6 +10,8 @@ module.exports = {
     environment: 'development',
     schemaSearchPath: 'mrsdba,casdba,dxdba,dtdba',
     destPath: require('path').join(__dirname, '../dist/coins.pgdump'),
+    s3BucketName: 'mrn-code',
+    s3Key: 'schema-dump/latest.pgdump',
     seedDataConfig: {
         seedStudyId: seedStudyId,
         seedSiteId: '99',
@@ -468,7 +470,8 @@ module.exports = {
                         is_site_admin: 'N',//jshint ignore:line
                         email: 'nidev@mrn.org',
                         email_unsubscribed: false,//jshint ignore:line
-                        password_hash: '$2y$12$VMLMAM9vrGHLx0XJ0eHw8uPP/eih62piMAvZqzJ0TTkxJLYlJ39d6'//jshint ignore:line SherbetLemon
+                        password_hash: '$2y$12$VMLMAM9vrGHLx0XJ0eHw8uPP/eih62piMAvZqzJ0TTkxJLYlJ39d6'//jshint ignore:line
+                        // pwd = SherbetLemon
                     }
                     /* jscs:enable */
                 ]
