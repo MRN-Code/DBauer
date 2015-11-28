@@ -434,6 +434,21 @@ module.exports = {
                 ],
                 where: 'study'
             },
+            {
+                tableName: 'mrs_instrument_questions',
+                joins: [],
+                where: ['question_id', 'END']
+            },
+            {
+                tableName: 'mrs_instrument_sections',
+                joins: [
+                    {
+                        tableName: 'mrs_instrument_questions',
+                        columnName: 'section_id'
+                    }
+                ],
+                where: ['question_id', 'END']
+            }
 
         ],
         rawRows: [
