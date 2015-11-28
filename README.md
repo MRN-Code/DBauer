@@ -8,6 +8,12 @@ confidential or sensitive information and can be used on your local device
 Nighly dumps of our development database schema can be found at https://mrn-code.s3-us-west-2.amazonaws.com/schema-dump/latest.pgdump. They are
 put there by this repo, running on [tmp]lintcoin within the MRN network.
 
+# TODO
+1. Monitoring: configure monit/mmonit to check whether this process is running
+every 24 hours.
+1. Automation: Add the dbauer-aws-credentials and this repo to Ansible.
+1. Add more seed data for more thorough testing.
+
 # Cron
 Copy _cron/coins-dbauer_ to _/etc/cron.daily/coins-dbauer_ and ensure that it
 is executable.
