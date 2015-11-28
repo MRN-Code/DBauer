@@ -343,6 +343,11 @@ module.exports = {
                 where: ['label', 'NOT LIKE', '%Portal%']
             },
             {
+                tableName: 'cas_apps',
+                joins:[],
+                where: ['label', 'Dark-ArtsPortal']
+            },
+            {
                 tableName: 'mrs_sharing_rules_asmts',
                 joins: [
                     {
