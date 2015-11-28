@@ -11,8 +11,8 @@ dbUtils.copySchema();
 var copyData = require(path.join(__dirname, 'lib/copy-seed-data.js'));
 copyData(connectionInfo)
     .then(function() {
-        dbUtils.dumpDb();
-        return s3Utils.upload()
+        dbUtils.dumpTempDb();
+       return s3Utils.upload()
             .then(function() {
                 dbUtils.dropTempDb();
                 process.exit(0);
