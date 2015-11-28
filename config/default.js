@@ -462,24 +462,28 @@ module.exports = {
                 rows: [
                     /* jscs:disable */
                     {
+                        /* ASMT */
                         app_id: 22,//jshint ignore:line
                         username: 'qApQHNJb3dpswjH9utr1Fw==',
                         role_id: 1,//jshint ignore:line
                         granted_date: '2015-11-11 19:52:42.305595'//jshint ignore:line
                     },
                     {
-                        app_id: 24,//jshint ignore:line
+                        /* MICIS */
+                        app_id: 21, //jshint ignore:line
                         username: 'qApQHNJb3dpswjH9utr1Fw==',
                         role_id: 1,//jshint ignore:line
                         granted_date: '2015-11-11 19:52:42.305595'//jshint ignore:line
                     },
                     {
+                        /* CAS */
                         app_id: 1,//jshint ignore:line
                         username: 'qApQHNJb3dpswjH9utr1Fw==',
                         role_id: 1,//jshint ignore:line
                         granted_date: '2015-11-11 19:52:42.305595'//jshint ignore:line
                     },
                     {
+                        /* MySecurity */
                         app_id: 221,//jshint ignore:line
                         username: 'qApQHNJb3dpswjH9utr1Fw==',
                         role_id: 1,//jshint ignore:line
