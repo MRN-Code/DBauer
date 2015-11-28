@@ -335,13 +335,6 @@ module.exports = {
                 joins:[
                     {tableName:'cas_users', columnName: 'username'}
                 ],
-                where: ['cas_users.label', 'mocha test']
-            },
-            {
-                tableName: 'cas_study_user_role_privs',
-                joins:[
-                    {tableName:'cas_users', columnName: 'username'}
-                ],
                 where: 'site'
             },
             {
