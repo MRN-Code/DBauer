@@ -1,0 +1,13 @@
+#/bin/bash
+
+ROOTDIR='/coins/DBauer'
+LOGPATH=$ROOTDIR/cron/log
+EXECPATH=$ROOTDIR/index.js
+STARTTIME=date
+
+echo 'Starting dbauer at '$STARTIME > $LOGPATH
+
+/usr/bin/node $EXECPATH 2>&1 >> $LOGPATH
+
+ENDTIME=date
+echo 'dbauer complete at '$ENDTIME >> $LOGPATH
