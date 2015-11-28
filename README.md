@@ -1,10 +1,16 @@
 # DBauer (DB Bauer)
 Utility for copying the COINS database schema and seeding it with data.
-(Bauer means 'farmer' in German).
+(Bauer means 'farmer' in German). The resulting database is free of any
+confidential or sensitive information and can be used on your local device
+(or in the cloud for automated tesing!).
+
+# Nighly dumps
+Nighly dumps of our development database schema can be found at https://mrn-code.s3-us-west-2.amazonaws.com/schema-dump/latest.pgdump. They are
+put there by this repo, running on [tmp]lintcoin within the MRN network.
 
 # Cron
 Copy _cron/coins-dbauer_ to _/etc/cron.daily/coins-dbauer_ and ensure that it
-is executable. 
+is executable.
 
 # Users
 This script copies all users associated with the 'Hogwarts' site. It also adds
