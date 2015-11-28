@@ -1,5 +1,5 @@
 'use strict';
-module.exports = function (grunt) {
+module.exports = function(grunt) {
     require('time-grunt')(grunt);
     require('load-grunt-tasks')(grunt);
     require('load-grunt-config')(grunt);
@@ -8,7 +8,7 @@ module.exports = function (grunt) {
     grunt.registerTask('test', function() {
         grunt.log.ok('no tests implemented');
     });
-    
+
     grunt.registerTask('lint', ['jshint', 'jscs']);
     grunt.registerTask('default', ['lint', 'test']);
 };
