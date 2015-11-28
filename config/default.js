@@ -324,18 +324,6 @@ module.exports = {
                 where: 'study'
             },
             {
-                tableName: 'cas_users',
-                joins:[],
-                where: ['label', 'mocha test']
-            },
-            {
-                tableName: 'cas_app_user_role_privs',
-                joins:[
-                    {tableName:'cas_users', columnName: 'username'}
-                ],
-                where: ['cas_users.label', 'mocha test']
-            },
-            {
                 tableName: 'cas_app_user_role_privs',
                 joins:[
                     {tableName:'cas_users', columnName: 'username'}
@@ -494,6 +482,12 @@ module.exports = {
                     },
                     {
                         app_id: 1,//jshint ignore:line
+                        username: 'qApQHNJb3dpswjH9utr1Fw==',
+                        role_id: 1,//jshint ignore:line
+                        granted_date: '2015-11-11 19:52:42.305595'//jshint ignore:line
+                    },
+                    {
+                        app_id: 221,//jshint ignore:line
                         username: 'qApQHNJb3dpswjH9utr1Fw==',
                         role_id: 1,//jshint ignore:line
                         granted_date: '2015-11-11 19:52:42.305595'//jshint ignore:line
