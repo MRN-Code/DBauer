@@ -9,7 +9,7 @@ cd $ROOTDIR
 
 echo Starting dbauer at $STARTTIME > $LOGPATH
 
-/usr/local/bin/node $EXECPATH >> $LOGPATH 2>&1
+node $EXECPATH >> $LOGPATH 2>&1
 
 ENDTIME=`date`
 echo dbauer complete at $ENDTIME >> $LOGPATH
